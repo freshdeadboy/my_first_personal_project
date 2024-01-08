@@ -1,0 +1,114 @@
+[
+  {
+    "name": "John Doe",
+    "address": "123 Main St",
+    "phone": "555-1234",
+    "email": "john@example.com",
+    "birthday": "1990-01-01"
+  },
+  {
+    "name": "Jane Smith",
+    "address": "456 Oak St",
+    "phone": "555-5678",
+    "email": "jane@example.com",
+    "birthday": "1985-05-15"
+  },
+  {
+    "name": "John Doe",
+    "address": "123 Main St",
+    "phone": "555-1234",
+    "email": "john@example.com",
+    "birthday": "1990-01-01"
+  },
+  {
+    "name": "Jane Smith",
+    "address": "456 Oak St",
+    "phone": "555-5678",
+    "email": "jane@example.com",
+    "birthday": "1985-05-15"
+  },
+  {
+    "name": "John Doe",
+    "address": "123 Main St",
+    "phone": "555-1234",
+    "email": "john@example.com",
+    "birthday": "1990-01-01"
+  },
+  {
+    "name": "Jane Smith",
+    "address": "456 Oak St",
+    "phone": "555-5678",
+    "email": "jane@example.com",
+    "birthday": "1985-05-15"
+  },
+  {
+    "name": "\u0456\u0444\u0432",
+    "address": "2",
+    "phone": "31",
+    "email": "\u0444\u0456\u0432",
+    "birthday": "123"
+  },
+  {
+    "name": "\u0444\u0456\u0432",
+    "address": "\u0444\u0432\u0456",
+    "phone": "\u0444\u0432\u0456",
+    "email": "\u0444\u0456\u0432",
+    "birthday": "\u0444\u0456\u0432"
+  },
+  {
+    "name": "Altx",
+    "address": "asd",
+    "phone": "+123123",
+    "email": "asd@gmaso.com",
+    "birthday": "2000-20-20"
+  },
+  {
+    "name": "asd",
+    "address": "asd",
+    "phone": "+1241234",
+    "email": "123@asd.ads",
+    "birthday": "1000-10-10"
+  },
+  {
+    "name": "\u0444\u0456\u0432",
+    "address": "\u0444\u0456\u0432",
+    "phone": "+1233",
+    "email": "ads@asd.asd",
+    "birthday": "2000-20-20"
+  },
+  {
+    "name": "Alex",
+    "address": "Alex 1",
+    "phone": "+123412",
+    "email": "Alex@alex.alex",
+    "birthday": "2023-12-02"
+  },
+  {
+    "name": "\u0424\u0444\u0432",
+    "address": "\u0444\u0456\u0432\u0430",
+    "phone": "+12415412",
+    "email": "asd@asd.asd",
+    "birthday": "2024-14-01"
+  },
+  {
+    "name": "asd",
+    "address": "asd",
+    "phone": "+12141",
+    "email": "asd@asd.asd",
+    "birthday": "2024-15-12"
+  },
+  {
+    "name": "\u0444\u0456\u0432",
+    "address": "\u0444\u0456\u0432",
+    "phone": "+123412",
+    "email": "asd@asd.asd",
+    "birthday": "2024-01-13"
+  },
+  {
+    "name": "\u0444\u0456\u0432",
+    "address": "\u0444\u0456\u0432",
+    "phone": "+123451232",
+    "email": "asda@asd.asd",
+    "birthday": "2000-10-1"
+  }
+]
