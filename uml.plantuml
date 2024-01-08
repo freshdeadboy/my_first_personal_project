@@ -1,0 +1,54 @@
+@startuml
+class AddressBook {
+    - file_path: string
+    - contacts: list
+    __init__(file_path: string)
+    + load_contacts(): list
+    + save_contacts(): void
+    + add_contact(name: string, address: string, phone: string, email: string, birthday: string): void
+    + display_contacts(): void
+    + display_upcoming_birthdays(days: int): void
+    + edit_contact(index: int, name: string, address: string, phone: string, email: string, birthday: string): void
+    + search_contacts(keyword: string): list
+}
+
+class Notes {
+    - file_path: string
+    - notes: list
+    __init__(file_path: string)
+    + load_notes(): list
+    + save_notes(): void
+    + add_note(text: string, tags: list): void
+    + display_notes(): void
+    + search_notes(keyword: string): list
+    + sort_notes_by_tag(tag: string): list
+    + edit_note(index: int, new_text: string, new_tags: list): void
+}
+
+class FileManager {
+    - folder_path: string
+    __init__()
+    + get_folder_path(): string
+    + create_folder_if_not_exists(): void
+    + sort_files_by_category(): void
+    + get_file_category(filename: string): string
+}
+
+class Main {
+    - address_book: AddressBook
+    - notes: Notes
+    - file_manager: FileManager
+    __init__()
+    + run(): void
+}
+
+AddressBook --> "1" Notes : Manages
+AddressBook --> FileManager : Uses
+Notes --> FileManager : Uses
+Main --> AddressBook : Creates
+Main --> Notes : Creates
+Main --> FileManager : Creates
+Main --> "1..*" AddressBook : Uses
+Main --> "1..*" Notes : Uses
+Main --> "1..*" FileManager : Uses
+@enduml
