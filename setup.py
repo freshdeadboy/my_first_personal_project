@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my_personal_assistant',
+    name='my_project_console',
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'prettytable',
-        'colorama',
+        'prettytable==2.2.1',
+        'colorama==0.4.4',
     ],
     entry_points={
         'console_scripts': [
-            'go_my_personal_assistant = my_personal_assistant.main:main',
+            'my_project_console = assistant.main:main',
         ],
     },
 )
