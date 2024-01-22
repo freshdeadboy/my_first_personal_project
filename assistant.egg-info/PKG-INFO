@@ -1,5 +1,0 @@
-Metadata-Version: 2.1
-Name: assistant
-Version: 0.1
-Requires-Dist: prettytable
-Requires-Dist: colorama
