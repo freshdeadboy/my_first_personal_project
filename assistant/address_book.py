@@ -10,15 +10,20 @@ from dateutil import parser
 
 
 class AddressBook:
-    def __init__(self, file_path='data/contacts.json'):
-        self.file_path = os.path.abspath(file_path)
+    def __init__(self, file_path=None):
+        self.file_path = file_path or 'data/contacts.json'
+        self.file_path = os.path.abspath(self.file_path)
         self.contacts = self.load_contacts()
         self.create_file_if_not_exists()
-        
+
     def create_file_if_not_exists(self):
+        directory = os.path.dirname(self.file_path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
         if not os.path.exists(self.file_path):
             with open(self.file_path, 'w') as file:
-                json.dump([], file)    
+                json.dump([], file)
 
     def load_contacts(self):
         if os.path.exists(self.file_path) and os.path.getsize(self.file_path) > 0:

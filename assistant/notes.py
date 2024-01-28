@@ -6,8 +6,9 @@ from prettytable import PrettyTable
 from colorama import Fore, Style
 
 class Notes:
-    def __init__(self, file_path='data/notes.json'):
-        self.file_path = file_path
+    def __init__(self, file_path=None):
+        self.file_path = file_path or 'data/notes.json'
+        self.file_path = os.path.abspath(self.file_path)
         self.notes = self.load_notes()
 
     def load_notes(self):

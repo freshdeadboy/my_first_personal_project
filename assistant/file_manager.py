@@ -4,8 +4,8 @@ import os
 import shutil
 
 class FileManager:
-    def __init__(self):
-        self.folder_path = self.get_folder_path()
+    def __init__(self, folder_path=None):
+        self.folder_path = folder_path or self.get_folder_path()
         self.create_folder_if_not_exists()
 
     def get_folder_path(self):

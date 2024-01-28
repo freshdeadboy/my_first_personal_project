@@ -1,6 +1,7 @@
 from assistant.address_book import AddressBook, get_user_input as address_book_get_user_input
 from assistant.notes import Notes
 from assistant.file_manager import FileManager
+import os  # Додано імпорт os
 
 def main():
     print("Вітаємо в консольному помічнику!")
@@ -26,6 +27,10 @@ def main():
             print("Невірний вибір. Спробуйте ще раз.")
 
 def address_book_menu():
+    # Додано імпорт PrettyTable, Colorama та Style
+    from prettytable import PrettyTable
+    from colorama import Fore, Style
+
     address_book = AddressBook()
 
     while True:
@@ -51,6 +56,10 @@ def address_book_add_contact(address_book):
     print("Контакт додано!")
 
 def notes_menu():
+    # Додано імпорт PrettyTable, Colorama та Style
+    from prettytable import PrettyTable
+    from colorama import Fore, Style
+
     notes = Notes()
 
     while True:
