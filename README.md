@@ -6,10 +6,9 @@
 
 Для встановлення та використання цього проєкту, скористайтеся наступними кроками:
 
-1. **Клонуйте репозиторій:**
+1. **Встановіть аситстент з репозиторія:**
     ```bash
-    git clone https://github.com/freshdeadboy/my_first_personal_project.git
-    cd assistant
+    pip install git+https://github.com/freshdeadboy/my_first_personal_project.git
     ```
 
 2. **Встановіть залежності:**
@@ -17,14 +16,9 @@
     pip install -r requirements.txt
     ```
 
-3. **Запустіть `setup.py`:**
+3. **Запустіть асистента:**
     ```bash
-    python setup.py install
-    ```
-
-4. **Запустіть асистента:**
-    ```bash
-    assistant
+    my_project_console
     ```
 
 ## Використання
@@ -47,6 +41,3 @@
     - Перегляд файлів у папці: `assistant file list`
     - Сортування файлів за категоріями: `assistant file sort`
 
-## Ліцензія
-
-Цей проєкт розповсюджується під ліцензією [MIT](LICENSE).

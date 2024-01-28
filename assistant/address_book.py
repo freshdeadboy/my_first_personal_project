@@ -6,11 +6,19 @@ from datetime import datetime, timedelta
 import re
 from prettytable import PrettyTable
 from colorama import Fore, Style
+from dateutil import parser
+
 
 class AddressBook:
     def __init__(self, file_path='data/contacts.json'):
-        self.file_path = file_path
+        self.file_path = os.path.abspath(file_path)
         self.contacts = self.load_contacts()
+        self.create_file_if_not_exists()
+        
+    def create_file_if_not_exists(self):
+        if not os.path.exists(self.file_path):
+            with open(self.file_path, 'w') as file:
+                json.dump([], file)    
 
     def load_contacts(self):
         if os.path.exists(self.file_path) and os.path.getsize(self.file_path) > 0:
@@ -157,12 +165,12 @@ def get_user_input():
     while True:
         try:
             birthday = input("Дата народження (рік-місяць-день): ")
-            datetime.strptime(birthday, '%Y-%m-%d')  # Перевірка коректності введеної дати
+            parsed_birthday = parser.parse(birthday)
             break
         except ValueError:
-            print("Невірний формат дня народження. Введіть у форматі рік-місяць-день, наприклад, 2000-01-01.")
+            print("Невірний формат дня народження. Спробуйте ще раз.")
 
-    return name, address, phone, email, birthday
+    return name, address, phone, email, parsed_birthday.strftime('%Y-%m-%d')
 
 # Приклад використання:
 if __name__ == "__main__":

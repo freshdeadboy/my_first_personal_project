@@ -1,54 +1,50 @@
 @startuml
+
+abstract class DataManager {
+    +load_data(): List
+    +save_data(): void
+}
+
 class AddressBook {
-    - file_path: string
-    - contacts: list
-    __init__(file_path: string)
-    + load_contacts(): list
-    + save_contacts(): void
-    + add_contact(name: string, address: string, phone: string, email: string, birthday: string): void
-    + display_contacts(): void
-    + display_upcoming_birthdays(days: int): void
-    + edit_contact(index: int, name: string, address: string, phone: string, email: string, birthday: string): void
-    + search_contacts(keyword: string): list
+    -file_path: str
+    -contacts: List
+
+    +__init__(file_path: str = 'data/contacts.json')
+    +load_contacts(): List
+    +save_contacts(): void
+    +add_contact(name: str, address: str, phone: str, email: str, birthday: str): void
+    +display_contacts(): void
+    +display_upcoming_birthdays(days: int): void
+    +edit_contact(index: int, name: str, address: str, phone: str, email: str, birthday: str): void
+    +search_contacts(keyword: str): List
 }
 
 class Notes {
-    - file_path: string
-    - notes: list
-    __init__(file_path: string)
-    + load_notes(): list
-    + save_notes(): void
-    + add_note(text: string, tags: list): void
-    + display_notes(): void
-    + search_notes(keyword: string): list
-    + sort_notes_by_tag(tag: string): list
-    + edit_note(index: int, new_text: string, new_tags: list): void
+    -file_path: str
+    -notes: List
+
+    +__init__(file_path: str = 'data/notes.json')
+    +load_notes(): List
+    +save_notes(): void
+    +add_note(text: str, tags: List): void
+    +display_notes(): void
+    +search_notes(keyword: str): List
+    +sort_notes_by_tag(tag: str): List
+    +edit_note(index: int, new_text: str, new_tags: List): void
 }
 
 class FileManager {
-    - folder_path: string
-    __init__()
-    + get_folder_path(): string
-    + create_folder_if_not_exists(): void
-    + sort_files_by_category(): void
-    + get_file_category(filename: string): string
+    -folder_path: str
+
+    +__init__()
+    +get_folder_path(): str
+    +create_folder_if_not_exists(): void
+    +sort_files_by_category(): void
+    +get_file_category(filename: str): str
 }
 
-class Main {
-    - address_book: AddressBook
-    - notes: Notes
-    - file_manager: FileManager
-    __init__()
-    + run(): void
-}
+DataManager <|.. AddressBook
+DataManager <|.. Notes
+DataManager <|.. FileManager
 
-AddressBook --> "1" Notes : Manages
-AddressBook --> FileManager : Uses
-Notes --> FileManager : Uses
-Main --> AddressBook : Creates
-Main --> Notes : Creates
-Main --> FileManager : Creates
-Main --> "1..*" AddressBook : Uses
-Main --> "1..*" Notes : Uses
-Main --> "1..*" FileManager : Uses
 @enduml
