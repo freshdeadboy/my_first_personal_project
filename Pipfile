@@ -1,0 +1,5 @@
+[packages]
+my_project = {editable = true, git = "https://github.com/freshdeadboy/my_first_personal_project", ref = "main"}
+
+[requires]
+python_version = "3.12"
