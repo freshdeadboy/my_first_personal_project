@@ -4,19 +4,19 @@
 
 ## Встановлення
 
-Для встановлення та використання цього проєкту, скористайтеся наступними кроками:
+Для встановлення та використання цього проєкту за допомогою консольного терміналу, скористайтеся наступними кроками:
 
 1. **Встановіть аситстент з репозиторія:**
     ```bash
-    pip install git+https://github.com/freshdeadboy/my_first_personal_project.git
+    pipenv install git+https://github.com/freshdeadboy/my_first_personal_project.git
     ```
 
-2. **Встановіть залежності:**
+2. **Активуйте віртуальне середовище:**
     ```bash
-    pip install -r requirements.txt
+    pipenv shell
     ```
 
-3. **Запустіть асистента:**
+3. **Запустіть асистента в віртуальному середовищі:**
     ```bash
     my_project_console
     ```
