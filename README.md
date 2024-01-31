@@ -11,12 +11,20 @@
     pipenv install git+https://github.com/freshdeadboy/my_first_personal_project.git
     ```
 
-2. **Активуйте віртуальне середовище:**
+2. **Встановлюємо всі потрібні бібліотеки:**
+    ```bash
+    pipenv install
+    або
+    ```bash
+    pipenv install --dev
+    ```
+
+3. **Активуйте віртуальне середовище:**
     ```bash
     pipenv shell
     ```
 
-3. **Запустіть асистента в віртуальному середовищі:**
+4. **Запустіть асистента в віртуальному середовищі:**
     ```bash
     my_project_console
     ```

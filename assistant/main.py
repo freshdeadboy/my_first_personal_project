@@ -39,7 +39,10 @@ def address_book_menu():
         print("\nОберіть опцію для Адресної книги:")
         print("1. Додати контакт")
         print("2. Показати список контактів")
-        print("3. Вийти в попереднє меню")
+        print("3. Вивести контакти з днем народження через задану кількість днів")
+        print("4. Редагувати контакт")
+        print("5. Пошук контактів за словом або датою")
+        print("6. Вийти в попереднє меню")
 
         choice = input("Ваш вибір: ")
 
@@ -48,6 +51,51 @@ def address_book_menu():
         elif choice == '2':
             address_book.display_contacts()
         elif choice == '3':
+            try:
+                days = int(input("Введіть кількість днів: "))
+                address_book.display_upcoming_birthdays(days)
+            except ValueError:
+                print("Невірний формат кількості днів. Будь ласка, введіть ціле число.")
+        elif choice == '4':
+            try:
+                index = int(input("Введіть номер контакту для редагування: ")) - 1
+                if 0 <= index < len(address_book.contacts):
+                    name, address, phone, email, birthday = get_user_input()
+                    address_book.edit_contact(index, name, address, phone, email, birthday)
+                    print("Контакт відредаговано!")
+                else:
+                    print("Невірний номер контакту.")
+            except ValueError:
+                print("Невірний формат номера контакту.")
+        elif choice == '5':
+            keyword = input("Введіть слово або дату для пошуку: ")
+            search_results = address_book.search_contacts(keyword)
+            if search_results:
+                print("Результати пошуку:")
+                table = PrettyTable()
+                table.field_names = [
+                    f"{Fore.RED}#", 
+                    f"{Fore.GREEN}Ім'я", 
+                    f"{Fore.BLUE}Адреса", 
+                    f"{Fore.YELLOW}Телефон", 
+                    f"{Fore.MAGENTA}Email", 
+                    f"{Fore.CYAN}День народження{Style.RESET_ALL}"
+                ]
+
+                for index, contact in enumerate(search_results, start=1):
+                    table.add_row([
+                        f"{Fore.RED}{index}", 
+                        f"{Fore.GREEN}{contact['name']}", 
+                        f"{Fore.BLUE}{contact['address']}", 
+                        f"{Fore.YELLOW}{contact['phone']}", 
+                        f"{Fore.MAGENTA}{contact['email']}", 
+                        f"{Fore.CYAN}{contact['birthday']}{Style.RESET_ALL}"
+                    ])
+
+                print(table)
+            else:
+                print("Нічого не знайдено.")
+        elif choice == '6':
             break
         else:
             print("Невірний вибір. Спробуйте ще раз.")
