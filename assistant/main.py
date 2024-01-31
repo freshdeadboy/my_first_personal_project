@@ -1,3 +1,5 @@
+# main.py
+
 from assistant.address_book import AddressBook, get_user_input as address_book_get_user_input
 from assistant.notes import Notes
 from assistant.file_manager import FileManager

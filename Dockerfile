@@ -11,3 +11,4 @@ COPY . /app
 
 # Запускаємо ваш консольний додаток
 CMD ["python", "-m", "assistant.main"]
+
