@@ -29,6 +29,11 @@
     my_project_console
     ```
 
+5. **Видалення асистента:**
+    ```bash
+    pipenv uninstall my_project_console
+    ```    
+
 ## Використання
 
 1. **Адресна книга:**
